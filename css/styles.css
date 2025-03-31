@@ -1,10 +1,42 @@
+h1 {
+    font-family: 'American Typewriter', serif;
+}
+
 .navbar {
     display: flex;
     background-color: #333;
+    border-radius: 25px;
 }
 
 .navbar a {
     color: white;
     text-align: center;
+    text-decoration: none;
     padding: 14px 20px;
+}
+
+.navbar a:hover {
+    background-color: #24A0ed;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 25px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#my-profile-photo img {
+    height: 200px;
+    margin: 50px;
+    float: left;
+}
+
+#my-profile-text {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    float: left;
 }
