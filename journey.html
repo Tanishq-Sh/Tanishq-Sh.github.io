@@ -1,57 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/timeline.css">
-    <title>Journey</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journey Timeline</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/timeline.css">
 </head>
 <body>
-    <h1>Journey</h1>
 
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#thoughts">Thoughts</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#journey">Journey</a>
-        <a href="#contact">Contact</a>
+  <div class="sidebar">
+    <div class="menu-icon"><i class="fas fa-bars"></i></div>
+    <div class="menu">
+      <a href="#"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="#"><i class="fas fa-user"></i><span>About</span></a>
+      <a href="#"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="#"><i class="fas fa-briefcase"></i><span>Experiences</span></a>
+      <a href="#"><i class="fas fa-lightbulb"></i><span>Thoughts</span></a>
+      <a href="#"><i class="fas fa-heart"></i><span>Hobbies</span></a>
+      <a href="#"><i class="fas fa-route"></i><span>Journey</span></a>
+      <a href="#"><i class="fas fa-envelope"></i><span>Contact</span></a>
     </div>
+  </div>
 
+  <main>
+    <h1>Journey Timeline</h1>
     <div class="timeline">
-        <div class="container left">
-            <div class="content">
-                <h2>2025</h2>
-                <p>Imperial College London</p>
-            </div>
+
+      <div class="timeline-item" onclick="toggleDescription(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h2>2025 — Imperial College London</h2>
+          <div class="timeline-description">
+            <p>Started my MSc in Artificial Intelligence Applications and Innovation at Imperial College London, focusing on AI systems, research projects, and applications in health and finance.</p>
+          </div>
         </div>
-        <div class="container right">
-            <div class="content">
-                <h2>2021</h2>
-                <p>Apple</p>
-            </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleDescription(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h2>2021 — Apple</h2>
+          <div class="timeline-description">
+            <p>Worked as a Data Engineer in the Business Insights team, collaborating with data scientists to build ML pipelines for customer feedback analysis and model deployment.</p>
+          </div>
         </div>
-        <div class="container left">
-            <div class="content">
-                <h2>2019</h2>
-                <p>Reliance Industries Limited</p>
-            </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleDescription(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h2>2019 — Reliance Industries Limited</h2>
+          <div class="timeline-description">
+            <p>Joined Reliance Industries as a Data Analyst, working on business intelligence dashboards, data integration projects, and operational insights for enterprise operations.</p>
+          </div>
         </div>
-        <div class="container right">
-            <div class="content">
-                <h2>2019</h2>
-                <p>InMobi</p>
-            </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleDescription(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h2>2019 — InMobi</h2>
+          <div class="timeline-description">
+            <p>Interned at InMobi in the data engineering team, contributing to scalable data pipeline projects, internal analytics tools, and data ingestion frameworks.</p>
+          </div>
         </div>
-        <div class="container left">
-            <div class="content">
-                <h2>2015</h2>
-                <p>BITS Pilani, Goa Campus</p>
-            </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleDescription(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h2>2015 — BITS Pilani, Goa Campus</h2>
+          <div class="timeline-description">
+            <p>Graduated with a Bachelor’s degree in Computer Science, specializing in data structures, algorithms, and project work related to AI and software development.</p>
+          </div>
         </div>
+      </div>
+
     </div>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
