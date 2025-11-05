@@ -151,7 +151,8 @@
     -->
     <header classs="w-full">
         <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm transition-all duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- FIX: Removed max-w-7xl, added px-4 sm:px-6 lg:px-8 directly here -->
+            <div class="mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-16">
                     <!-- Left Side: Name/Logo -->
                     <div class="flex-shrink-0">
@@ -159,7 +160,8 @@
                     </div>
 
                     <!-- Right Side: Navigation Links (Desktop) -->
-                    <div class="hidden md:block">
+                    <!-- FIX: Changed from md:block to lg:block -->
+                    <div class="hidden lg:block">
                         <div id="nav-links" class="ml-10 flex items-baseline space-x-4">
                             <a href="#" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 nav-link-active" data-target="home">Home</a>
                             <a href="#" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600" data-target="about">About</a>
@@ -173,7 +175,8 @@
                     </div>
                     
                     <!-- Mobile Menu Button -->
-                    <div class="-mr-2 flex md:hidden">
+                    <!-- FIX: Changed from md:hidden to lg:hidden -->
+                    <div class="-mr-2 flex lg:hidden">
                         <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
                             <span class="sr-only">Open main menu</span>
                             <i data-lucide="menu" class="block h-6 w-6"></i>
@@ -184,7 +187,8 @@
             </div>
 
             <!-- Mobile Menu (hidden by default) -->
-            <div class="md:hidden hidden" id="mobile-menu">
+            <!-- FIX: Changed from md:hidden to lg:hidden -->
+            <div class="lg:hidden hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <a href="#" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 nav-link-active" data-target="home">Home</a>
                     <a href="#" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50" data-target="about">About</a>
@@ -208,11 +212,11 @@
 
         <!-- 
           SECTION 1: HOME 
-          FIX: Removed min-h-screen, added min-h for viewport fill
+          FIX: Removed min-h calculation, added py-16 to wrapper
         -->
-        <section id="home" class="page-section min-h-[calc(100vh-8rem)] flex flex-col pb-16 bg-white">
+        <section id="home" class="page-section flex flex-col bg-white">
             <!-- Wrapper for vertical centering -->
-            <div class="flex-grow flex items-center">
+            <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div class="text-center">
                         <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
@@ -236,11 +240,11 @@
 
         <!-- 
           SECTION 2: ABOUT
-          FIX: Removed min-h-screen, added min-h for viewport fill
+          FIX: Removed min-h calculation, added py-16 to wrapper
         -->
-        <section id="about" class="page-section min-h-[calc(100vh-8rem)] flex flex-col pb-16 bg-gray-50 hidden">
+        <section id="about" class="page-section flex flex-col bg-gray-50 hidden">
             <!-- Wrapper for vertical centering -->
-            <div class="flex-grow flex items-center">
+            <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900">About Me</h2>
@@ -267,11 +271,11 @@
         
         <!-- 
           SECTION 3: EXPERIENCES
-          FIX: Removed min-h-screen, added min-h for viewport fill
+          FIX: Removed min-h calculation, added py-16 to wrapper
         -->
-        <section id="experiences" class="page-section min-h-[calc(100vh-8rem)] flex flex-col pb-16 bg-white hidden">
+        <section id="experiences" class="page-section flex flex-col bg-white hidden">
             <!-- Wrapper for vertical centering -->
-            <div class="flex-grow flex items-center">
+            <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900">Experiences</h2>
@@ -321,11 +325,11 @@
 
         <!-- 
           SECTION 4: PROJECTS
-          FIX: Removed min-h-screen, added min-h for viewport fill
+          FIX: Removed min-h calculation, added py-16 to wrapper
         -->
-        <section id="projects" class="page-section min-h-[calc(100vh-8rem)] flex flex-col pb-16 bg-gray-50 hidden">
+        <section id="projects" class="page-section flex flex-col bg-gray-50 hidden">
             <!-- Wrapper for vertical centering -->
-            <div class="flex-grow flex items-center">
+            <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900">Projects</h2>
@@ -360,11 +364,11 @@
 
         <!-- 
           SECTION 5: JOURNEY
-          FIX: Removed min-h-screen, added min-h for viewport fill
+          FIX: Removed min-h calculation, added py-16 to wrapper
         -->
-        <section id="journey" class="page-section min-h-[calc(100vh-8rem)] flex flex-col pb-16 bg-white hidden">
+        <section id="journey" class="page-section flex flex-col bg-white hidden">
             <!-- Wrapper for vertical centering -->
-            <div class="flex-grow flex items-center">
+            <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900">My Journey</h2>
@@ -396,11 +400,11 @@
 
         <!-- 
           SECTION 6: WRITINGS
-          FIX: Removed min-h-screen, added min-h for viewport fill
+          FIX: Removed min-h calculation, added py-16 to wrapper
         -->
-        <section id="writings" class="page-section min-h-[calc(100vh-8rem)] flex flex-col pb-16 bg-gray-50 hidden">
+        <section id="writings" class="page-section flex flex-col bg-gray-50 hidden">
             <!-- Wrapper for vertical centering -->
-            <div class="flex-grow flex items-center">
+            <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900">Writings</h2>
@@ -563,11 +567,11 @@ def value_iteration_update(V, P, R, gamma):
 
         <!-- 
           SECTION 7: HOBBIES
-          FIX: Removed min-h-screen, added min-h for viewport fill
+          FIX: Removed min-h calculation, added py-16 to wrapper
         -->
-        <section id="hobbies" class="page-section min-h-[calc(100vh-8rem)] flex flex-col pb-16 bg-white hidden">
+        <section id="hobbies" class="page-section flex flex-col bg-white hidden">
             <!-- Wrapper for vertical centering -->
-            <div class="flex-grow flex items-center">
+            <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900">Hobbies</h2>
@@ -586,11 +590,11 @@ def value_iteration_update(V, P, R, gamma):
 
         <!-- 
           SECTION 8: CONTACT
-          FIX: Removed min-h-screen, added min-h for viewport fill
+          FIX: Removed min-h calculation, added py-16 to wrapper
         -->
-        <section id="contact" class="page-section min-h-[calc(100vh-8rem)] flex flex-col pb-16 bg-white hidden">
+        <section id="contact" class="page-section flex flex-col bg-white hidden">
             <!-- Wrapper for vertical centering -->
-            <div class="flex-grow flex items-center">
+            <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900">Get In Touch</h2>
@@ -920,4 +924,6 @@ def value_iteration_update(V, P, R, gamma):
 
 </body>
 </html>
+
+
 
