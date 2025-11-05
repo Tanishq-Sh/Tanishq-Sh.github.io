@@ -206,22 +206,25 @@
         <!-- 
           SECTION 1: HOME 
         -->
-        <section id="home" class="page-section pt-24 pb-16 md:pb-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                        Hi, I'm <span class="text-indigo-600">Your Name</span>
-                    </h1>
-                    <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                        Software Engineer with 4.5 years at Apple, now pursuing an MSc in Artificial Intelligence at Imperial College London.
-                    </p>
-                    <div class="mt-8 flex justify-center space-x-4">
-                        <a href="#" class="nav-link inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700" data-target="projects">
-                            View My Projects
-                        </a>
-                        <a href="#" class="nav-link inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-gray-50" data-target="contact">
-                            Get In Touch
-                        </a>
+        <section id="home" class="page-section min-h-screen flex flex-col pt-16 pb-16 bg-white">
+            <!-- Wrapper for vertical centering -->
+            <div class="flex-grow flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                            Hi, I'm <span class="text-indigo-600">Your Name</span>
+                        </h1>
+                        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                            Software Engineer with 4.5 years at Apple, now pursuing an MSc in Artificial Intelligence at Imperial College London.
+                        </p>
+                        <div class="mt-8 flex justify-center space-x-4">
+                            <a href="#" class="nav-link inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700" data-target="projects">
+                                View My Projects
+                            </a>
+                            <a href="#" class="nav-link inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-gray-50" data-target="contact">
+                                Get In Touch
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -582,15 +585,6 @@ def value_iteration_update(V, P, R, gamma):
             </div>
         </section>
     </main>
-
-    <!-- 
-      FOOTER
-    -->
-    <footer class="bg-gray-800 text-gray-300">
-        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
-        </div>
-    </footer>
     
     <!-- 
       ARTICLE MODAL
