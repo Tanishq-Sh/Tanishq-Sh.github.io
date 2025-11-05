@@ -14,7 +14,7 @@
     <!-- Inter Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
-    <!-- KaTeX (for Math) - FIX: Corrected 'xintegrity' to 'integrity' and added 'defer' -->
+    <!-- KaTeX (for Math) - FIX: Corrected 'xintegrity' to 'integrity' -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMeaOAkGfviKytjaEYN1oGVGIfCeSQRoMGTAEhYxFBDQXBWGM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGjKrqTYdGHIse2txssXFDbXFPPGO+SOVgeLZOwiC2CdkLhwlTMNdeMvUP" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURPlLJSytR54goLNUoFuDRLdEunUfL+lKLRMqtSNYTxWUjDx1EOk1I" crossorigin="anonymous"></script>
@@ -147,7 +147,6 @@
 
     <!-- 
       HEADER & NAVIGATION
-      - "Thoughts" and "Blog" merged into "Writings"
     -->
     <header classs="w-full">
         <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm transition-all duration-300">
@@ -205,6 +204,7 @@
 
         <!-- 
           SECTION 1: HOME 
+          - FIX: Added wrapper div for vertical centering
         -->
         <section id="home" class="page-section min-h-screen flex flex-col pt-16 pb-16 bg-white">
             <!-- Wrapper for vertical centering -->
@@ -232,26 +232,30 @@
 
         <!-- 
           SECTION 2: ABOUT
+          - FIX: Added wrapper div for vertical centering
         -->
-        <section id="about" class="page-section pt-20 pb-16 md:pb-24 bg-gray-50 hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">About Me</h2>
-                    <p class="mt-2 text-lg text-gray-600">A little bit about my background and journey.</p>
-                </div>
-                <div class="max-w-3xl mx-auto text-left md:text-center text-gray-700 space-y-4 text-base md:text-lg leading-relaxed">
-                    <!-- ... About me content ... -->
-                    <p>
-                        Hello! I'm a passionate engineer and lifelong learner. After an incredible 4.5 years at Apple, where I contributed to [Mention a high-level area, e.g., core OS, services, ML features], I decided to dive deeper into the field that fascinates me most: Artificial Intelligence.
-                    </p>
-                    <p>
-                        I am currently a full-time student at Imperial College London, working towards my MSc in AI. I'm exploring topics like Reinforcement Learning, Deep Learning, and the mathematical foundations of ML. My goal is to leverage this knowledge to build intelligent, impactful, and responsible technology.
-                    </p>
-                    <div class="pt-6">
-                        <a href="path/to/your-resume.pdf" download="YourName_Resume.pdf" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
-                            <i data-lucide="download" class="w-5 h-5 mr-2"></i>
-                            Download My Resume
-                        </a>
+        <section id="about" class="page-section min-h-screen flex flex-col pt-16 pb-16 bg-gray-50 hidden">
+            <!-- Wrapper for vertical centering -->
+            <div class="flex-grow flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">About Me</h2>
+                        <p class="mt-2 text-lg text-gray-600">A little bit about my background and journey.</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto text-left md:text-center text-gray-700 space-y-4 text-base md:text-lg leading-relaxed">
+                        <!-- ... About me content ... -->
+                        <p>
+                            Hello! I'm a passionate engineer and lifelong learner. After an incredible 4.5 years at Apple, where I contributed to [Mention a high-level area, e.g., core OS, services, ML features], I decided to dive deeper into the field that fascinates me most: Artificial Intelligence.
+                        </p>
+                        <p>
+                            I am currently a full-time student at Imperial College London, working towards my MSc in AI. I'm exploring topics like Reinforcement Learning, Deep Learning, and the mathematical foundations of ML. My goal is to leverage this knowledge to build intelligent, impactful, and responsible technology.
+                        </p>
+                        <div class="pt-6">
+                            <a href="path/to/your-resume.pdf" download="YourName_Resume.pdf" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                                <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+                                Download My Resume
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -259,49 +263,53 @@
         
         <!-- 
           SECTION 3: EXPERIENCES
+          - FIX: Added wrapper div for vertical centering
         -->
-        <section id="experiences" class="page-section pt-20 pb-16 md:pb-24 bg-white hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Experiences</h2>
-                    <p class="mt-2 text-lg text-gray-600">My professional and academic roles.</p>
-                </div>
-                <div class="max-w-4xl mx-auto space-y-8">
-                    <!-- ... Experience items ... -->
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-xl font-semibold text-indigo-700">MSc Artificial Intelligence</h3>
-                                <p class="text-md font-medium text-gray-800">Imperial College London</p>
-                            </div>
-                            <span class="text-sm text-gray-500 font-medium">2024 - Present</span>
-                        </div>
-                        <p class="mt-4 text-gray-700">
-                            Full-time master's student. Key modules include:
-                        </p>
-                        <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
-                            <li>Reinforcement Learning</li>
-                            <li>Deep Learning</li>
-                            <li>Mathematics for Machine Learning</li>
-                            <li>Python Programming</li>
-                        </ul>
+        <section id="experiences" class="page-section min-h-screen flex flex-col pt-16 pb-16 bg-white hidden">
+            <!-- Wrapper for vertical centering -->
+            <div class="flex-grow flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">Experiences</h2>
+                        <p class="mt-2 text-lg text-gray-600">My professional and academic roles.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-xl font-semibold text-indigo-700">Senior Software Engineer</h3>
-                                <p class="text-md font-medium text-gray-800">Apple</p>
+                    <div class="max-w-4xl mx-auto space-y-8">
+                        <!-- ... Experience items ... -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-indigo-700">MSc Artificial Intelligence</h3>
+                                    <p class="text-md font-medium text-gray-800">Imperial College London</p>
+                                </div>
+                                <span class="text-sm text-gray-500 font-medium">2024 - Present</span>
                             </div>
-                            <span class="text-sm text-gray-500 font-medium">2019 - 2024</span>
+                            <p class="mt-4 text-gray-700">
+                                Full-time master's student. Key modules include:
+                            </p>
+                            <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
+                                <li>Reinforcement Learning</li>
+                                <li>Deep Learning</li>
+                                <li>Mathematics for Machine Learning</li>
+                                <li>Python Programming</li>
+                            </ul>
                         </div>
-                        <p class="mt-4 text-gray-700">
-                            Worked on [Team/Product] for 4.5 years. My responsibilities included:
-                        </p>
-                        <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
-                            <li>[Brief, high-level responsibility 1]</li>
-                            <li>[Brief, high-level responsibility 2]</li>
-                            <li>[Brief, high-level responsibility 3]</li>
-                        </ul>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-indigo-700">Senior Software Engineer</h3>
+                                    <p class="text-md font-medium text-gray-800">Apple</p>
+                                </div>
+                                <span class="text-sm text-gray-500 font-medium">2019 - 2024</span>
+                            </div>
+                            <p class="mt-4 text-gray-700">
+                                Worked on [Team/Product] for 4.5 years. My responsibilities included:
+                            </p>
+                            <ul class="mt-2 list-disc list-inside text-gray-700 space-y-1">
+                                <li>[Brief, high-level responsibility 1]</li>
+                                <li>[Brief, high-level responsibility 2]</li>
+                                <li>[Brief, high-level responsibility 3]</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -309,32 +317,36 @@
 
         <!-- 
           SECTION 4: PROJECTS
+          - FIX: Added wrapper div for vertical centering
         -->
-        <section id="projects" class="page-section pt-20 pb-16 md:pb-24 bg-gray-50 hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Projects</h2>
-                    <p class="mt-2 text-lg text-gray-600">Some of the things I've built.</p>
-                </div>
-                <!-- Projects Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- ... Project cards ... -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.02]">
-                        <div class="p-6 flex-grow">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl font-semibold text-indigo-700">Project Title 1</h3>
-                                <a href="https://github.com/your-username/your-repo" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-600">
-                                    <i data-lucide="github" class="w-6 h-6"></i>
-                                </a>
+        <section id="projects" class="page-section min-h-screen flex flex-col pt-16 pb-16 bg-gray-50 hidden">
+            <!-- Wrapper for vertical centering -->
+            <div class="flex-grow flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">Projects</h2>
+                        <p class="mt-2 text-lg text-gray-600">Some of the things I've built.</p>
+                    </div>
+                    <!-- Projects Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- ... Project cards ... -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="p-6 flex-grow">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h3 class="text-xl font-semibold text-indigo-700">Project Title 1</h3>
+                                    <a href="https://github.com/your-username/your-repo" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-600">
+                                        <i data-lucide="github" class="w-6 h-6"></i>
+                                    </a>
+                                </div>
+                                <p class="text-gray-700 mb-4">
+                                    A short explanation of the project, its purpose, and the technologies used.
+                                </p>
                             </div>
-                            <p class="text-gray-700 mb-4">
-                                A short explanation of the project, its purpose, and the technologies used.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50 border-t border-gray-100">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Python</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Reinforcement Learning</span>
+                            <div class="p-6 bg-gray-50 border-t border-gray-100">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Python</span>
+                                    <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Reinforcement Learning</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -344,30 +356,35 @@
 
         <!-- 
           SECTION 5: JOURNEY
+          - FIX: Added wrapper div for vertical centering
+          - FIX: Changed mb-16 to mb-12 for consistent alignment
         -->
-        <section id="journey" class="page-section pt-20 pb-16 md:pb-24 bg-white hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-gray-900">My Journey</h2>
-                    <p class="mt-2 text-lg text-gray-600">A visual timeline of my path so far.</p>
-                </div>
-                
-                <div class="timeline-container">
-                    <!-- ... Timeline items ... -->
-                    <div class="timeline-item right">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3 class="text-lg font-semibold text-indigo-700 mb-1">Joined Imperial College London</h3>
-                            <span class="text-sm text-gray-500 mb-2 block">September 2024</span>
-                            <p class="text-sm text-gray-700">Began my MSc in Artificial Intelligence to specialize in machine learning and data science.</p>
-                        </div>
+        <section id="journey" class="page-section min-h-screen flex flex-col pt-16 pb-16 bg-white hidden">
+            <!-- Wrapper for vertical centering -->
+            <div class="flex-grow flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">My Journey</h2>
+                        <p class="mt-2 text-lg text-gray-600">A visual timeline of my path so far.</p>
                     </div>
-                    <div class="timeline-item left">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3 class="text-lg font-semibold text-indigo-700 mb-1">Senior Engineer at Apple</h3>
-                            <span class="text-sm text-gray-500 mb-2 block">2022</span>
-                            <p class="text-sm text-gray-700">Promoted to Senior Software Engineer, taking on more leadership and complex architectural challenges.</p>
+                    
+                    <div class="timeline-container">
+                        <!-- ... Timeline items ... -->
+                        <div class="timeline-item right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="text-lg font-semibold text-indigo-700 mb-1">Joined Imperial College London</h3>
+                                <span class="text-sm text-gray-500 mb-2 block">September 2024</span>
+                                <p class="text-sm text-gray-700">Began my MSc in Artificial Intelligence to specialize in machine learning and data science.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="text-lg font-semibold text-indigo-700 mb-1">Senior Engineer at Apple</h3>
+                                <span class="text-sm text-gray-500 mb-2 block">2022</span>
+                                <p class="text-sm text-gray-700">Promoted to Senior Software Engineer, taking on more leadership and complex architectural challenges.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -376,121 +393,123 @@
 
         <!-- 
           SECTION 6: WRITINGS
-          - Replaces "Thoughts" and "Blog"
-          - Implements Card Grid + Pagination + Modal
+          - FIX: Added wrapper div for vertical centering
         -->
-        <section id="writings" class="page-section pt-20 pb-16 md:pb-24 bg-gray-50 hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Writings</h2>
-                    <p class="mt-2 text-lg text-gray-600">My notes, learnings, and thoughts on AI, tech, and more.</p>
-                </div>
+        <section id="writings" class="page-section min-h-screen flex flex-col pt-16 pb-16 bg-gray-50 hidden">
+            <!-- Wrapper for vertical centering -->
+            <div class="flex-grow flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">Writings</h2>
+                        <p class="mt-2 text-lg text-gray-600">My notes, learnings, and thoughts on AI, tech, and more.</p>
+                    </div>
 
-                <!-- Writings Card Grid -->
-                <div id="writings-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Article Card 1 (Template) -->
-                    <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="rl-notes-1">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-gray-500">October 28, 2025</span>
-                            <h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Notes on Reinforcement Learning</h3>
-                            <p class="text-gray-700 mb-4 text-sm">
-                                A quick dive into the Bellman equation, a foundational concept for many RL algorithms.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">RL</span>
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Learning</span>
+                    <!-- Writings Card Grid -->
+                    <div id="writings-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Article Card 1 (Template) -->
+                        <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="rl-notes-1">
+                            <div class="p-6 flex-grow">
+                                <span class="text-sm text-gray-500">October 28, 2025</span>
+                                <h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Notes on Reinforcement Learning</h3>
+                                <p class="text-gray-700 mb-4 text-sm">
+                                    A quick dive into the Bellman equation, a foundational concept for many RL algorithms.
+                                </p>
                             </div>
-                            <span class="text-sm font-medium text-indigo-600">Read More &rarr;</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Article Card 2 (Placeholder) -->
-                    <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-1">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-gray-500">October 20, 2025</span>
-                            <h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Maths for ML: PCA Explained</h3>
-                            <p class="text-gray-700 mb-4 text-sm">
-                                Breaking down Principal Component Analysis and its reliance on eigendecomposition.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Maths</span>
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Learning</span>
+                            <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">RL</span>
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Learning</span>
+                                </div>
+                                <span class="text-sm font-medium text-indigo-600">Read More &rarr;</span>
                             </div>
-                            <span class="text-sm font-medium text-indigo-600">Read More &rarr;</span>
                         </div>
-                    </div>
-                    
-                    <!-- Article Card 3 (Placeholder) -->
-                    <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-2">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-gray-500">October 15, 2025</span>
-                            <h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Thoughts on Python's GIL</h3>
-                            <p class="text-gray-700 mb-4 text-sm">
-                                Why does the Global Interpreter Lock exist and what are the modern alternatives?
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Python</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Thought</span>
+                        
+                        <!-- Article Card 2 (Placeholder) -->
+                        <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-1">
+                            <div class="p-6 flex-grow">
+                                <span class="text-sm text-gray-500">October 20, 2025</span>
+                                <h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Maths for ML: PCA Explained</h3>
+                                <p class="text-gray-700 mb-4 text-sm">
+                                    Breaking down Principal Component Analysis and its reliance on eigendecomposition.
+                                </p>
                             </div>
-                            <span class="text-sm font-medium text-indigo-600">Read More &rarr;</span>
+                            <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Maths</span>
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Learning</span>
+                                </div>
+                                <span class="text-sm font-medium text-indigo-600">Read More &rarr;</span>
+                            </div>
                         </div>
+                        
+                        <!-- Article Card 3 (Placeholder) -->
+                        <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-2">
+                            <div class="p-6 flex-grow">
+                                <span class="text-sm text-gray-500">October 15, 2025</span>
+                                <h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Thoughts on Python's GIL</h3>
+                                <p class="text-gray-700 mb-4 text-sm">
+                                    Why does the Global Interpreter Lock exist and what are the modern alternatives?
+                                </p>
+                            </div>
+                            <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Python</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Thought</span>
+                                </div>
+                                <span class="text-sm font-medium text-indigo-600">Read More &rarr;</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Add 4 more placeholder cards for pagination demo -->
+                        <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-1">
+                            <div class="p-6 flex-grow"><span class="text-sm text-gray-500">October 10, 2025</span><h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Article 4</h3><p class="text-gray-700 mb-4 text-sm">Placeholder content...</p></div>
+                            <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center"><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Demo</span></div><span class="text-sm font-medium text-indigo-600">Read More &rarr;</span></div>
+                        </div>
+                        <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-1">
+                            <div class="p-6 flex-grow"><span class="text-sm text-gray-500">October 5, 2025</span><h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Article 5</h3><p class="text-gray-700 mb-4 text-sm">Placeholder content...</p></div>
+                            <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center"><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Demo</span></div><span class="text-sm font-medium text-indigo-600">Read More &rarr;</span></div>
+                        </div>
+                        <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-1">
+                            <div class="p-6 flex-grow"><span class="text-sm text-gray-500">October 1, 2025</span><h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Article 6</h3><p class="text-gray-700 mb-4 text-sm">Placeholder content...</p></div>
+                            <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center"><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Demo</span></div><span class="text-sm font-m
+edium text-indigo-600">Read More &rarr;</span></div>
+                        </div>
+                        <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-2">
+                            <div class="p-6 flex-grow"><span class="text-sm text-gray-500">September 25, 2025</span><h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Article 7 (Page 2)</h3><p class="text-gray-700 mb-4 text-sm">This article will appear on the second page.</p></div>
+                            <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center"><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Demo</span></div><span class="text-sm font-medium text-indigo-600">Read More &rarr;</span></div>
+                        </div>
+
                     </div>
                     
-                    <!-- Add 4 more placeholder cards for pagination demo -->
-                    <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-1">
-                        <div class="p-6 flex-grow"><span class="text-sm text-gray-500">October 10, 2025</span><h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Article 4</h3><p class="text-gray-700 mb-4 text-sm">Placeholder content...</p></div>
-                        <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center"><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Demo</span></div><span class="text-sm font-medium text-indigo-600">Read More &rarr;</span></div>
-                    </div>
-                    <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-1">
-                        <div class="p-6 flex-grow"><span class="text-sm text-gray-500">October 5, 2025</span><h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Article 5</h3><p class="text-gray-700 mb-4 text-sm">Placeholder content...</p></div>
-                        <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center"><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Demo</span></div><span class="text-sm font-medium text-indigo-600">Read More &rarr;</span></div>
-                    </div>
-                    <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-1">
-                        <div class="p-6 flex-grow"><span class="text-sm text-gray-500">October 1, 2025</span><h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Article 6</h3><p class="text-gray-700 mb-4 text-sm">Placeholder content...</p></div>
-                        <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center"><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Demo</span></div><span class="text-sm font-medium text-indigo-600">Read More &rarr;</span></div>
-                    </div>
-                    <div class="article-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer transition-transform duration-300 hover:scale-[1.02]" data-article-id="placeholder-2">
-                        <div class="p-6 flex-grow"><span class="text-sm text-gray-500">September 25, 2025</span><h3 class="text-xl font-semibold text-indigo-700 mt-2 mb-2">Article 7 (Page 2)</h3><p class="text-gray-700 mb-4 text-sm">This article will appear on the second page.</p></div>
-                        <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-between items-center"><div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Demo</span></div><span class="text-sm font-medium text-indigo-600">Read More &rarr;</span></div>
+                    <!-- Pagination Controls -->
+                    <div id="pagination-controls" class="mt-12 flex justify-between items-center max-w-lg mx-auto">
+                        <!-- This will be populated by JavaScript -->
                     </div>
 
-                </div>
-                
-                <!-- Pagination Controls -->
-                <div id="pagination-controls" class="mt-12 flex justify-between items-center max-w-lg mx-auto">
-                    <!-- This will be populated by JavaScript -->
-                </div>
+                    <!-- 
+                      HIDDEN ARTICLE CONTENT STORAGE
+                      - All full articles live here, hidden.
+                      - They are cloned into the modal when needed.
+                    -->
+                    <div id="writings-content-storage" class="hidden">
 
-                <!-- 
-                  HIDDEN ARTICLE CONTENT STORAGE
-                  - All full articles live here, hidden.
-                  - They are cloned into the modal when needed.
-                -->
-                <div id="writings-content-storage" class="hidden">
-
-                    <!-- Article 1 Full Content -->
-                    <article id="rl-notes-1" class="prose prose-indigo max-w-none text-gray-700 space-y-4">
-                        <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Notes on Reinforcement Learning</h3>
-                        <span class="text-sm text-gray-500 block -mt-2 mb-4">October 28, 2025</span>
-                        <p>
-                            I'm currently diving into Reinforcement Learning. One of the foundational concepts is the Bellman equation,
-                            which recursively defines the value of a state. For a policy $\pi$, the state-value function $v_\pi(s)$ is:
-                        </p>
-                        $$
-                        v_\pi(s) = \sum_{a} \pi(a|s) \sum_{s', r} p(s', r|s, a) [r + \gamma v_\pi(s')]
-                        $$
-                        <p>
-                            This equation expresses that the value of a state $s$ is the expected return when starting in $s$ and
-                            following policy $\pi$. It's a fundamental building block for many RL algorithms.
-                        </p>
-                        <p>Here's a simple Python implementation of a value iteration update step using NumPy:</p>
+                        <!-- Article 1 Full Content -->
+                        <article id="rl-notes-1" class="prose prose-indigo max-w-none text-gray-700 space-y-4">
+                            <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Notes on Reinforcement Learning</h3>
+                            <span class="text-sm text-gray-500 block -mt-2 mb-4">October 28, 2025</span>
+                            <p>
+                                I'm currently diving into Reinforcement Learning. One of the foundational concepts is the Bellman equation,
+                                which recursively defines the value of a state. For a policy $\pi$, the state-value function $v_\pi(s)$ is:
+                            </p>
+                            $$
+                            v_\pi(s) = \sum_{a} \pi(a|s) \sum_{s', r} p(s', r|s, a) [r + \gamma v_\pi(s')]
+                            $$
+                            <p>
+                                This equation expresses that the value of a state $s$ is the expected return when starting in $s$ and
+                                following policy $\pi$. It's a fundamental building block for many RL algorithms.
+                            </p>
+                            <p>Here's a simple Python implementation of a value iteration update step using NumPy:</p>
 <pre><code class="language-python">
 import numpy as np
 
@@ -515,43 +534,48 @@ def value_iteration_update(V, P, R, gamma):
     new_V = np.max(Q, axis=1)
     return new_V
 </code></pre>
-                    </article>
-                    
-                    <!-- Article 2 Full Content (Placeholder) -->
-                    <article id="placeholder-1" class="prose prose-indigo max-w-none text-gray-700 space-y-4">
-                        <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Maths for ML: PCA Explained</h3>
-                        <span class="text-sm text-gray-500 block -mt-2 mb-4">October 20, 2025</span>
-                        <p>This is the full article content for "PCA Explained".</p>
-                        <p>It would contain text, math like $A^T A$, and code blocks.</p>
-                    </article>
-                    
-                    <!-- Article 3 Full Content (Placeholder) -->
-                    <article id="placeholder-2" class="prose prose-indigo max-w-none text-gray-700 space-y-4">
-                        <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Thoughts on Python's GIL</h3>
-                        <span class="text-sm text-gray-500 block -mt-2 mb-4">October 15, 2025</span>
-                        <p>Full article content for the "Python GIL" post.</p>
-                    </article>
-                    
-                    <!-- Add hidden content for the other placeholders... -->
+                        </article>
+                        
+                        <!-- Article 2 Full Content (Placeholder) -->
+                        <article id="placeholder-1" class="prose prose-indigo max-w-none text-gray-700 space-y-4">
+                            <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Maths for ML: PCA Explained</h3>
+                            <span class="text-sm text-gray-500 block -mt-2 mb-4">October 20, 2025</span>
+                            <p>This is the full article content for "PCA Explained".</p>
+                            <p>It would contain text, math like $A^T A$, and code blocks.</p>
+                        </article>
+                        
+                        <!-- Article 3 Full Content (Placeholder) -->
+                        <article id="placeholder-2" class="prose prose-indigo max-w-none text-gray-700 space-y-4">
+                            <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Thoughts on Python's GIL</h3>
+                            <span class="text-sm text-gray-500 block -mt-2 mb-4">October 15, 2025</span>
+                            <p>Full article content for the "Python GIL" post.</p>
+                        </article>
+                        
+                        <!-- Add hidden content for the other placeholders... -->
 
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- 
           SECTION 7: HOBBIES
+          - FIX: Added wrapper div for vertical centering
         -->
-        <section id="hobbies" class="page-section pt-20 pb-16 md:pb-24 bg-white hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Hobbies</h2>
-                    <p class="mt-2 text-lg text-gray-600">Outside of work, I enjoy photography.</p>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <!-- ... Photo grid ... -->
-                    <div class="rounded-lg overflow-hidden shadow-md">
-                        <img src="https://placehold.co/600x400/a3a3a3/ffffff?text=Photo+1" alt="Placeholder image 1" class="w-full h-full object-cover aspect-video md:aspect-square transition-transform duration-300 hover:scale-105">
+        <section id="hobbies" class="page-section min-h-screen flex flex-col pt-16 pb-16 bg-white hidden">
+            <!-- Wrapper for vertical centering -->
+            <div class="flex-grow flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">Hobbies</h2>
+                        <p class="mt-2 text-lg text-gray-600">Outside of work, I enjoy photography.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <!-- ... Photo grid ... -->
+                        <div class="rounded-lg overflow-hidden shadow-md">
+                            <img src="https://placehold.co/600x400/a3a3a3/ffffff?text=Photo+1" alt="Placeholder image 1" class="w-full h-full object-cover aspect-video md:aspect-square transition-transform duration-300 hover:scale-105">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -559,32 +583,45 @@ def value_iteration_update(V, P, R, gamma):
 
         <!-- 
           SECTION 8: CONTACT
-          - Note: "Blog" section was removed/merged
+          - FIX: Added wrapper div for vertical centering
         -->
-        <section id="contact" class="page-section pt-20 pb-16 md:pb-24 bg-white hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900">Get In Touch</h2>
-                    <p class="mt-2 text-lg text-gray-600">I'm always open to connecting.</p>
-                </div>
-                <div class="flex justify-center space-x-6 md:space-x-10">
-                    <!-- ... Contact links ... -->
-                    <a href="mailto:your-email@example.com" class="text-gray-600 hover:text-indigo-600 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
-                        <i data-lucide="mail" class="w-10 h-10"></i>
-                        <span class="font-medium">Email</span>
-                    </a>
-                    <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
-                        <i data-lucide="linkedin" class="w-10 h-10"></i>
-                        <span class="font-medium">LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
-                        <i data-lucide="github" class="w-10 h-10"></i>
-                        <span class="font-medium">GitHub</span>
-                    </a>
+        <section id="contact" class="page-section min-h-screen flex flex-col pt-16 pb-16 bg-white hidden">
+            <!-- Wrapper for vertical centering -->
+            <div class="flex-grow flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">Get In Touch</h2>
+                        <p class="mt-2 text-lg text-gray-600">I'm always open to connecting.</p>
+                    </div>
+                    <div class="flex justify-center space-x-6 md:space-x-10">
+                        <!-- ... Contact links ... -->
+                        <a href="mailto:your-email@example.com" class="text-gray-600 hover:text-indigo-600 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
+                            <i data-lucide="mail" class="w-10 h-10"></i>
+                            <span class="font-medium">Email</span>
+                        </a>
+                        <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
+                            <i data-lucide="linkedin" class="w-10 h-10"></i>
+                            <span class="font-medium">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
+                            <i data-lucide="github" class="w-10 h-10"></i>
+                            <span class="font-medium">GitHub</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- 
+      FOOTER
+      - Removed copyright text and reduced padding
+    -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Copyright removed as requested -->
+        </div>
+    </footer>
     
     <!-- 
       ARTICLE MODAL
@@ -628,6 +665,7 @@ def value_iteration_update(V, P, R, gamma):
             
             function renderKatexIn(element) {
                 try {
+                    // Check if renderMathInElement is defined (it should be, from the deferred script)
                     if (typeof renderMathInElement !== 'undefined') {
                         renderMathInElement(element, {
                             delimiters: [
@@ -638,7 +676,7 @@ def value_iteration_update(V, P, R, gamma):
                             ]
                         });
                     } else {
-                        console.warn("KaTeX 'renderMathInElement' not found.");
+                        console.warn("KaTeX 'renderMathInElement' not found. Scripts might be blocked or failed to load.");
                     }
                 } catch (e) {
                     console.error("Error rendering KaTeX:", e);
@@ -650,19 +688,21 @@ def value_iteration_update(V, P, R, gamma):
                      if (typeof Prism !== 'undefined') {
                         Prism.highlightAllUnder(element);
                      } else {
-                        console.warn("Prism.js not found.");
+                        console.warn("Prism.js not found. Scripts might be blocked or failed to load.");
                      }
-                } catch (e) {
+                } catch (e)
+ {
                     console.error("Error highlighting code with Prism:", e);
                 }
             }
             
             // Initial render on page load
+            // We wait a tiny bit for the deferred scripts (KaTeX) to be ready.
             setTimeout(() => {
                 renderKatexIn(document.body);
                 highlightPrismIn(document.body);
                 console.log("Initial KaTeX and Prism render complete.");
-            }, 100);
+            }, 100); // 100ms delay
 
             // --- 3. Page Navigation Logic ---
             const allNavLinks = document.querySelectorAll('.nav-link');
@@ -678,15 +718,21 @@ def value_iteration_update(V, P, R, gamma):
                     const targetId = link.getAttribute('data-target');
                     if (!targetId) return;
                     const targetSection = document.getElementById(targetId);
-                    if (!targetSection) return;
+                    if (!targetSection) {
+                        console.warn('No section found with ID:', targetId);
+                        return;
+                    }
 
+                    // Hide all sections, then show the target one
                     sections.forEach(section => section.classList.add('hidden'));
                     targetSection.classList.remove('hidden');
 
+                    // Update active link state
                     allNavLinks.forEach(navLink => {
                         navLink.classList.toggle('nav-link-active', navLink.getAttribute('data-target') === targetId);
                     });
 
+                    // Close mobile menu if open
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                         mobileMenuButton.setAttribute('aria-expanded', 'false');
@@ -695,6 +741,8 @@ def value_iteration_update(V, P, R, gamma):
                         xIcon.classList.remove('block');
                         xIcon.classList.add('hidden');
                     }
+                    
+                    // Scroll to top of new "page"
                     window.scrollTo(0, 0);
                 });
             });
@@ -716,7 +764,10 @@ def value_iteration_update(V, P, R, gamma):
             const articlesPerPage = 6;
             let currentArticlePage = 1;
             const writingsGrid = document.getElementById('writings-grid');
-            const allArticleCards = Array.from(writingsGrid.querySelectorAll('.article-card'));
+            
+            // Check if writingsGrid exists before querying
+            const allArticleCards = writingsGrid ? Array.from(writingsGrid.querySelectorAll('.article-card')) : [];
+            
             const paginationControls = document.getElementById('pagination-controls');
             const totalArticles = allArticleCards.length;
             const totalPages = Math.ceil(totalArticles / articlesPerPage);
@@ -747,6 +798,12 @@ def value_iteration_update(V, P, R, gamma):
 
             function renderPaginationControls(page) {
                 if (!paginationControls) return;
+                
+                // Don't show controls if only 1 page
+                if (totalPages <= 1) {
+                    paginationControls.innerHTML = '';
+                    return;
+                }
                 
                 let prevDisabled = (page === 1) ? 'disabled' : '';
                 let nextDisabled = (page === totalPages) ? 'disabled' : '';
@@ -782,7 +839,9 @@ def value_iteration_update(V, P, R, gamma):
             }
 
             function openArticleModal(articleId) {
+                if (!articleId) return;
                 const articleContent = document.getElementById(articleId);
+                
                 if (!articleContent) {
                     console.error('Article content not found:', articleId);
                     modalContentArea.innerHTML = '<p>Error: Article content not found.</p>';
@@ -798,24 +857,28 @@ def value_iteration_update(V, P, R, gamma):
                 }
 
                 // Show the modal with animation
-                articleModal.classList.remove('hidden');
-                setTimeout(() => {
-                    articleModal.style.opacity = '1';
-                    modalContentBox.style.opacity = '1';
-                    modalContentBox.style.transform = 'scale(1)';
-                }, 10); // Short delay to allow CSS transition
+                if (articleModal) {
+                    articleModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        articleModal.style.opacity = '1';
+                        modalContentBox.style.opacity = '1';
+                        modalContentBox.style.transform = 'scale(1)';
+                    }, 10); // Short delay to allow CSS transition
+                }
             }
             
             function closeArticleModal() {
                 // Animate out
-                articleModal.style.opacity = '0';
-                modalContentBox.style.opacity = '0';
-                modalContentBox.style.transform = 'scale(0.95)';
-                
-                setTimeout(() => {
-                    articleModal.classList.add('hidden');
-                    modalContentArea.innerHTML = ''; // Clear content
-                }, 300); // Must match CSS transition duration
+                if (articleModal) {
+                    articleModal.style.opacity = '0';
+                    modalContentBox.style.opacity = '0';
+                    modalContentBox.style.transform = 'scale(0.95)';
+                    
+                    setTimeout(() => {
+                        articleModal.classList.add('hidden');
+                        modalContentArea.innerHTML = ''; // Clear content
+                    }, 300); // Must match CSS transition duration
+                }
             }
             
             // --- Event Listeners for Writings Section ---
