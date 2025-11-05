@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
     function renderKatexIn(element) {
         try {
+            // Check if renderMathInElement is defined (it should be, from the deferred script)
             if (typeof renderMathInElement !== 'undefined') {
                 renderMathInElement(element, {
                     delimiters: [
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     ]
                 });
             } else {
-                console.warn("KaTeX 'renderMathInElement' not found.");
+                console.warn("KaTeX 'renderMathInElement' not found. Scripts might be blocked or failed to load.");
             }
         } catch (e) {
             console.error("Error rendering KaTeX:", e);
@@ -36,19 +37,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 if (typeof Prism !== 'undefined') {
                 Prism.highlightAllUnder(element);
                 } else {
-                console.warn("Prism.js not found.");
+                console.warn("Prism.js not found. Scripts might be blocked or failed to load.");
                 }
-        } catch (e) {
+        } catch (e)
+{
             console.error("Error highlighting code with Prism:", e);
         }
     }
     
     // Initial render on page load
+    // We wait a tiny bit for the deferred scripts (KaTeX) to be ready.
     setTimeout(() => {
         renderKatexIn(document.body);
         highlightPrismIn(document.body);
         console.log("Initial KaTeX and Prism render complete.");
-    }, 100);
+    }, 100); // 100ms delay
 
     // --- 3. Page Navigation Logic ---
     const allNavLinks = document.querySelectorAll('.nav-link');
@@ -64,15 +67,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const targetId = link.getAttribute('data-target');
             if (!targetId) return;
             const targetSection = document.getElementById(targetId);
-            if (!targetSection) return;
+            if (!targetSection) {
+                console.warn('No section found with ID:', targetId);
+                return;
+            }
 
+            // Hide all sections, then show the target one
             sections.forEach(section => section.classList.add('hidden'));
             targetSection.classList.remove('hidden');
 
+            // Update active link state
             allNavLinks.forEach(navLink => {
                 navLink.classList.toggle('nav-link-active', navLink.getAttribute('data-target') === targetId);
             });
 
+            // Close mobile menu if open
             if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
                 mobileMenuButton.setAttribute('aria-expanded', 'false');
@@ -81,6 +90,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 xIcon.classList.remove('block');
                 xIcon.classList.add('hidden');
             }
+            
+            // Scroll to top of new "page"
             window.scrollTo(0, 0);
         });
     });
@@ -102,7 +113,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const articlesPerPage = 6;
     let currentArticlePage = 1;
     const writingsGrid = document.getElementById('writings-grid');
-    const allArticleCards = Array.from(writingsGrid.querySelectorAll('.article-card'));
+    
+    // Check if writingsGrid exists before querying
+    const allArticleCards = writingsGrid ? Array.from(writingsGrid.querySelectorAll('.article-card')) : [];
+    
     const paginationControls = document.getElementById('pagination-controls');
     const totalArticles = allArticleCards.length;
     const totalPages = Math.ceil(totalArticles / articlesPerPage);
@@ -133,6 +147,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function renderPaginationControls(page) {
         if (!paginationControls) return;
+        
+        // Don't show controls if only 1 page
+        if (totalPages <= 1) {
+            paginationControls.innerHTML = '';
+            return;
+        }
         
         let prevDisabled = (page === 1) ? 'disabled' : '';
         let nextDisabled = (page === totalPages) ? 'disabled' : '';
@@ -168,7 +188,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function openArticleModal(articleId) {
+        if (!articleId) return;
         const articleContent = document.getElementById(articleId);
+        
         if (!articleContent) {
             console.error('Article content not found:', articleId);
             modalContentArea.innerHTML = '<p>Error: Article content not found.</p>';
@@ -184,24 +206,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
 
         // Show the modal with animation
-        articleModal.classList.remove('hidden');
-        setTimeout(() => {
-            articleModal.style.opacity = '1';
-            modalContentBox.style.opacity = '1';
-            modalContentBox.style.transform = 'scale(1)';
-        }, 10); // Short delay to allow CSS transition
+        if (articleModal) {
+            articleModal.classList.remove('hidden');
+            setTimeout(() => {
+                articleModal.style.opacity = '1';
+                modalContentBox.style.opacity = '1';
+                modalContentBox.style.transform = 'scale(1)';
+            }, 10); // Short delay to allow CSS transition
+        }
     }
     
     function closeArticleModal() {
         // Animate out
-        articleModal.style.opacity = '0';
-        modalContentBox.style.opacity = '0';
-        modalContentBox.style.transform = 'scale(0.95)';
-        
-        setTimeout(() => {
-            articleModal.classList.add('hidden');
-            modalContentArea.innerHTML = ''; // Clear content
-        }, 300); // Must match CSS transition duration
+        if (articleModal) {
+            articleModal.style.opacity = '0';
+            modalContentBox.style.opacity = '0';
+            modalContentBox.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                articleModal.classList.add('hidden');
+                modalContentArea.innerHTML = ''; // Clear content
+            }, 300); // Must match CSS transition duration
+        }
     }
     
     // --- Event Listeners for Writings Section ---
