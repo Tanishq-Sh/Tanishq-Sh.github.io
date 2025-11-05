@@ -1,0 +1,117 @@
+/* Base font */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #212529; /* Dark text */
+}
+
+/* --- Active Nav Link Styling --- */
+/* Class applied by JavaScript to the active nav link */
+.nav-link-active {
+    color: #4f46e5; /* Indigo-600 */
+    font-weight: 600;
+}
+
+/* --- Journey Timeline Styling --- */
+/* The main timeline container */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* The vertical line running down the center */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #cbd5e1; /* slate-300 */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+    z-index: 0;
+}
+
+/* A single item (node + content) in the timeline */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Place items on the left side */
+.timeline-item.left {
+    left: 0;
+}
+
+/* Place items on the right side */
+.timeline-item.right {
+    left: 50%;
+}
+
+/* The circular node on the timeline */
+.timeline-dot {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 4px solid #4f46e5; /* Indigo-600 */
+    top: 28px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Position the dot for left-side items */
+.timeline-item.left .timeline-dot {
+    right: -10px;
+}
+
+/* Position the dot for right-side items */
+.timeline-item.right .timeline-dot {
+    left: -10px;
+}
+
+/* The content box for a timeline item */
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for timeline on smaller screens */
+@media screen and (max-width: 768px) {
+    /* Move the timeline to the left */
+    .timeline-container::after {
+        left: 31px;
+    }
+
+    /* Make all items full-width */
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Move all items to the right of the timeline */
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+    }
+
+    /* Position the dots on the timeline line */
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: 21px;
+    }
+}
