@@ -98,6 +98,15 @@ body {
     cursor: not-allowed;
 }
 
+/* --- Prevent Prose Styles from Affecting MathJax --- */
+.prose mjx-container {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+    text-align: inherit !important;
+}
 
 /* --- Responsive Timeline --- */
 @media screen and (max-width: 768px) {

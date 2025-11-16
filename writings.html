@@ -14,10 +14,19 @@
     <!-- Inter Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
-    <!-- KaTeX (for Math) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0KOVEMeaOAkGfviKytjaEYN1oGVGIfCeSQRoMGTAEhYxFBDQXBWGM" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGjKrqTYdGHIse2txssXFDbXFPPGO+SOVgeLZOwiC2CdkLhwlTMNdeMvUP" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURPlLJSytR54goLNUoFuDRLdEunUfL+lKLRMqtSNYTxWUjDx1EOk1I" crossorigin="anonymous"></script>
+    <!-- MathJax Configuration & Library -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            chtml: {
+                fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
     <!-- Prism.js (for Code Highlighting) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
@@ -177,14 +186,16 @@
                             <span class="text-sm text-gray-500 block -mt-2 mb-4">October 28, 2025</span>
                             <p>
                                 I'm currently diving into Reinforcement Learning. One of the foundational concepts is the Bellman equation,
-                                which recursively defines the value of a state. For a policy $\pi$, the state-value function $v_\pi(s)$ is:
+                                which recursively defines the value of a state. For a policy <span class="not-prose">$\pi$</span>, the state-value function <span class="not-prose">$v_\pi(s)$</span> is:
                             </p>
+                            <div class="not-prose">
                             $$
                             v_\pi(s) = \sum_{a} \pi(a|s) \sum_{s', r} p(s', r|s, a) [r + \gamma v_\pi(s')]
                             $$
+                            </div>
                             <p>
-                                This equation expresses that the value of a state $s$ is the expected return when starting in $s$ and
-                                following policy $\pi$. It's a fundamental building block for many RL algorithms.
+                                This equation expresses that the value of a state <span class="not-prose">$s$</span> is the expected return when starting in <span class="not-prose">$s$</span> and
+                                following policy <span class="not-prose">$\pi$</span>. It's a fundamental building block for many RL algorithms.
                             </p>
                             <p>Here's a simple Python implementation of a value iteration update step using NumPy:</p>
 <pre><code class="language-python">
@@ -218,7 +229,7 @@ def value_iteration_update(V, P, R, gamma):
                             <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Maths for ML: PCA Explained</h3>
                             <span class="text-sm text-gray-500 block -mt-2 mb-4">October 20, 2025</span>
                             <p>This is the full article content for "PCA Explained".</p>
-                            <p>It would contain text, math like $A^T A$, and code blocks.</p>
+                            <p>It would contain text, math like <span class="not-prose">$A^T A$</span>, and code blocks.</p>
                         </article>
                         
                         <!-- Article 3 Full Content (Placeholder) -->

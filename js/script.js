@@ -8,56 +8,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.error("Error initializing Lucide icons:", e);
     }
 
-    // --- 2. KaTeX & Prism (Defer functions) ---
-    // We need to re-run these when the modal opens,
-    // so we'll wrap them in functions.
-    
-    function renderKatexIn(element) {
-        try {
-            // Check if renderMathInElement is defined (it should be, from the deferred script)
-            if (typeof renderMathInElement !== 'undefined') {
-                renderMathInElement(element, {
-                    delimiters: [
-                        {left: '$$', right: '$$', display: true},
-                        {left: '$', right: '$', display: false},
-                        {left: '\\(', right: '\\)', display: false},
-                        {left: '\\[', right: '\\]', display: true}
-                    ]
-                });
-            } else {
-                console.warn("KaTeX 'renderMathInElement' not found. Scripts might be blocked or failed to load.");
-            }
-        } catch (e) {
-            console.error("Error rendering KaTeX:", e);
-        }
-    }
+    // --- 2. Prism Rendering Logic ---
+    // KaTeX is replaced by MathJax, which handles its own rendering automatically.
+    // We only need a function for Prism to re-highlight code in the modal.
     
     function highlightPrismIn(element) {
-            try {
-                if (typeof Prism !== 'undefined') {
+        try {
+            if (typeof Prism !== 'undefined') {
                 Prism.highlightAllUnder(element);
-                } else {
+            } else {
                 console.warn("Prism.js not found. Scripts might be blocked or failed to load.");
-                }
-        } catch (e)
-{
+            }
+        } catch (e) {
             console.error("Error highlighting code with Prism:", e);
         }
     }
     
-    // Initial render on page load
-    // We wait a tiny bit for the deferred scripts (KaTeX) to be ready.
+    // Initial Prism render on page load. MathJax handles itself.
     setTimeout(() => {
-        renderKatexIn(document.body);
         highlightPrismIn(document.body);
-        console.log("Initial KaTeX and Prism render complete.");
-    }, 100); // 100ms delay
+        console.log("Initial Prism render complete.");
+    }, 100);
 
-    // --- 3. Page Navigation Logic ---
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const menuIcon = mobileMenuButton.querySelector('[data-lucide="menu"]');
-    const xIcon = mobileMenuButton.querySelector('[data-lucide="x"]');
+    // --- 3. Multi-Page Navigation Logic ---
     const navLinks = document.querySelectorAll('.nav-link');
     const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
 
@@ -68,6 +41,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     // --- 4. Mobile Menu Toggle ---
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const menuIcon = mobileMenuButton.querySelector('[data-lucide="menu"]');
+    const xIcon = mobileMenuButton.querySelector('[data-lucide="x"]');
+
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
             const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
@@ -171,8 +149,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             modalContentArea.innerHTML = ''; // Clear previous content
             modalContentArea.appendChild(contentClone);
             
-            // IMPORTANT: Re-run KaTeX and Prism on the new modal content
-            renderKatexIn(modalContentArea);
+            // Re-run Prism highlighting for the new modal content.
+            // MathJax will automatically re-render the math.
             highlightPrismIn(modalContentArea);
         }
 
