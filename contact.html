@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Portfolio</title>
+    <title>Contact - Portfolio</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,25 +73,28 @@
     </header>
 
     <main class="flex-grow pt-16">
-        <section id="home" class="page-section flex flex-col bg-white">
+        <section id="contact" class="page-section flex flex-col bg-white">
             <!-- Wrapper for vertical centering -->
             <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                    <div class="text-center">
-                        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                            Hi, I'm <span class="text-indigo-600">Your Name</span>
-                        </h1>
-                        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                            Software Engineer with 4.5 years at Apple, now pursuing an MSc in Artificial Intelligence at Imperial College London.
-                        </p>
-                        <div class="mt-8 flex justify-center space-x-4">
-                            <a href="projects.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
-                                View My Projects
-                            </a>
-                            <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-gray-50">
-                                Get In Touch
-                            </a>
-                        </div>
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">Get In Touch</h2>
+                        <p class="mt-2 text-lg text-gray-600">I'm always open to connecting.</p>
+                    </div>
+                    <div class="flex justify-center space-x-6 md:space-x-10">
+                        <!-- ... Contact links ... -->
+                        <a href="mailto:your-email@example.com" class="text-gray-600 hover:text-indigo-600 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
+                            <i data-lucide="mail" class="w-10 h-10"></i>
+                            <span class="font-medium">Email</span>
+                        </a>
+                        <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
+                            <i data-lucide="linkedin" class="w-10 h-10"></i>
+                            <span class="font-medium">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
+                            <i data-lucide="github" class="w-10 h-10"></i>
+                            <span class="font-medium">GitHub</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -107,6 +110,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
-
-

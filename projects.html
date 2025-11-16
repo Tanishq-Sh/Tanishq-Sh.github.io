@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Portfolio</title>
+    <title>Projects - Portfolio</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,24 +73,35 @@
     </header>
 
     <main class="flex-grow pt-16">
-        <section id="home" class="page-section flex flex-col bg-white">
+        <section id="projects" class="page-section flex flex-col bg-gray-50">
             <!-- Wrapper for vertical centering -->
             <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                    <div class="text-center">
-                        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                            Hi, I'm <span class="text-indigo-600">Your Name</span>
-                        </h1>
-                        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                            Software Engineer with 4.5 years at Apple, now pursuing an MSc in Artificial Intelligence at Imperial College London.
-                        </p>
-                        <div class="mt-8 flex justify-center space-x-4">
-                            <a href="projects.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
-                                View My Projects
-                            </a>
-                            <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-gray-50">
-                                Get In Touch
-                            </a>
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">Projects</h2>
+                        <p class="mt-2 text-lg text-gray-600">Some of the things I've built.</p>
+                    </div>
+                    <!-- Projects Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- ... Project cards ... -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="p-6 flex-grow">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h3 class="text-xl font-semibold text-indigo-700">Project Title 1</h3>
+                                    <a href="https://github.com/your-username/your-repo" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-600">
+                                        <i data-lucide="github" class="w-6 h-6"></i>
+                                    </a>
+                                </div>
+                                <p class="text-gray-700 mb-4">
+                                    A short explanation of the project, its purpose, and the technologies used.
+                                </p>
+                            </div>
+                            <div class="p-6 bg-gray-50 border-t border-gray-100">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Python</span>
+                                    <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Reinforcement Learning</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,6 +118,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
-
-

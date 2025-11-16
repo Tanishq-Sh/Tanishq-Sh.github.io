@@ -54,46 +54,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 100); // 100ms delay
 
     // --- 3. Page Navigation Logic ---
-    const allNavLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.page-section');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const menuIcon = mobileMenuButton.querySelector('[data-lucide="menu"]');
     const xIcon = mobileMenuButton.querySelector('[data-lucide="x"]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
 
-    allNavLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            const targetId = link.getAttribute('data-target');
-            if (!targetId) return;
-            const targetSection = document.getElementById(targetId);
-            if (!targetSection) {
-                console.warn('No section found with ID:', targetId);
-                return;
-            }
-
-            // Hide all sections, then show the target one
-            sections.forEach(section => section.classList.add('hidden'));
-            targetSection.classList.remove('hidden');
-
-            // Update active link state
-            allNavLinks.forEach(navLink => {
-                navLink.classList.toggle('nav-link-active', navLink.getAttribute('data-target') === targetId);
-            });
-
-            // Close mobile menu if open
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
-                menuIcon.classList.remove('hidden');
-                menuIcon.classList.add('block');
-                xIcon.classList.remove('block');
-                xIcon.classList.add('hidden');
-            }
-            
-            // Scroll to top of new "page"
-            window.scrollTo(0, 0);
-        });
+    navLinks.forEach(link => {
+        if (link.dataset.page === currentPage) {
+            link.classList.add('nav-link-active');
+        }
     });
 
     // --- 4. Mobile Menu Toggle ---

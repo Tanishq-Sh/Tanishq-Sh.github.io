@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Portfolio</title>
+    <title>Journey - Portfolio</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -73,24 +73,32 @@
     </header>
 
     <main class="flex-grow pt-16">
-        <section id="home" class="page-section flex flex-col bg-white">
+        <section id="journey" class="page-section flex flex-col bg-white">
             <!-- Wrapper for vertical centering -->
             <div class="flex-grow flex items-center py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                    <div class="text-center">
-                        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                            Hi, I'm <span class="text-indigo-600">Your Name</span>
-                        </h1>
-                        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                            Software Engineer with 4.5 years at Apple, now pursuing an MSc in Artificial Intelligence at Imperial College London.
-                        </p>
-                        <div class="mt-8 flex justify-center space-x-4">
-                            <a href="projects.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
-                                View My Projects
-                            </a>
-                            <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-gray-50">
-                                Get In Touch
-                            </a>
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900">My Journey</h2>
+                        <p class="mt-2 text-lg text-gray-600">A visual timeline of my path so far.</p>
+                    </div>
+                    
+                    <div class="timeline-container">
+                        <!-- ... Timeline items ... -->
+                        <div class="timeline-item right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="text-lg font-semibold text-indigo-700 mb-1">Joined Imperial College London</h3>
+                                <span class="text-sm text-gray-500 mb-2 block">September 2024</span>
+                                <p class="text-sm text-gray-700">Began my MSc in Artificial Intelligence to specialize in machine learning and data science.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="text-lg font-semibold text-indigo-700 mb-1">Senior Engineer at Apple</h3>
+                                <span class="text-sm text-gray-500 mb-2 block">2022</span>
+                                <p class="text-sm text-gray-700">Promoted to Senior Software Engineer, taking on more leadership and complex architectural challenges.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,6 +115,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
